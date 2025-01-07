@@ -125,3 +125,18 @@ body {
         font-size: 2.5rem;
     }
 } 
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #22010e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2c121c;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #47011c;
+}
