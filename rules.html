@@ -244,15 +244,46 @@
             }, 3000);
         }
 
-        // Scroll to rule if hash is present in URL
-        window.addEventListener('load', () => {
-            if (window.location.hash) {
-                const element = document.querySelector(window.location.hash);
-                if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
+        // Collapse all rules except the target
+        function collapseAllExcept(targetId) {
+            document.querySelectorAll('.rule-card').forEach(card => {
+                if (card.id !== targetId) {
+                    card.classList.remove('expanded');
+                }
+            });
+        }
+
+        // Handle rule card clicks
+        document.querySelectorAll('.rule-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                // Don't toggle if clicking on action buttons
+                if (!e.target.closest('.rule-actions')) {
+                    card.classList.toggle('expanded');
+                    collapseAllExcept(card.id);
+                }
+            });
+        });
+
+        // Handle hash changes and initial load
+        function handleHashChange() {
+            const hash = window.location.hash;
+            if (hash) {
+                const targetRule = document.querySelector(hash);
+                if (targetRule) {
+                    // Collapse all rules first
+                    collapseAllExcept(targetRule.id);
+                    // Expand the target rule
+                    targetRule.classList.add('expanded');
+                    // Scroll into view with some delay to ensure smooth transition
+                    setTimeout(() => {
+                        targetRule.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
                 }
             }
-        });
+        }
+
+        window.addEventListener('hashchange', handleHashChange);
+        window.addEventListener('load', handleHashChange);
     </script>
 </body>
 </html> 

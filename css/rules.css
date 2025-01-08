@@ -86,6 +86,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
+.rule-card.expanded .rule-description,
 .rule-card:hover .rule-description {
     max-height: 200px;
     opacity: 1;
@@ -287,7 +288,8 @@ body {
         transition: opacity 0.3s ease;
     }
 
-    .rule-card:hover .rule-actions {
+    .rule-card:hover .rule-actions,
+    .rule-card.expanded .rule-actions {
         opacity: 1;
     }
 }
