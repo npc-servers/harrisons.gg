@@ -275,14 +275,21 @@ body {
 }
 
 .rule-actions {
-    display: flex;
-    gap: 0.5rem;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    display: none;
 }
 
-.rule-card:hover .rule-actions {
-    opacity: 1;
+/* Only show rule actions on modern/64-bit browsers */
+@supports (backdrop-filter: blur(10px)) {
+    .rule-actions {
+        display: flex;
+        gap: 0.5rem;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .rule-card:hover .rule-actions {
+        opacity: 1;
+    }
 }
 
 .rule-actions button {
