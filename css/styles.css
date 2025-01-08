@@ -12,7 +12,7 @@ body {
 .container {
     height: 100vh;
     width: 100vw;
-    background-image: url('../HHBackground.png');
+    background-image: url('../hhbg.png');
     background-size: cover;
     background-position: center;
     display: flex;
