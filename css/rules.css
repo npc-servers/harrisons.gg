@@ -213,3 +213,30 @@ body {
         transition: none !important;
     }
 }
+
+.disclaimer {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: rgba(71, 1, 28, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.disclaimer p {
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Update animations to include disclaimer */
+@supports (animation-timeline: scroll()) {
+    .disclaimer {
+        opacity: 0;
+        animation: fadeInScale 0.5s ease-out forwards;
+        animation-delay: 1.4s;
+    }
+}
