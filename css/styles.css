@@ -69,6 +69,7 @@ body {
     border-radius: 4px;
     flex: 1;
     min-width: 160px;
+    text-decoration: none;
 }
 
 .btn:hover {
