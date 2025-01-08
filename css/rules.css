@@ -9,8 +9,6 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    min-height: -webkit-fill-available;
-    width: 100vw;
     overflow-x: hidden;
     background-color: #47011c;
 }
@@ -33,14 +31,8 @@ body::before {
     bottom: 0;
     background-image: url('../hhbg.png');
     background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    width: 100vw;
-    height: 100vh;
+    background-position: center;
     z-index: -2;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
 }
 
 /* Update overlay */
@@ -486,9 +478,4 @@ body::after {
     font-size: 0.9rem;
     opacity: 0.7;
     font-family: Arial, sans-serif;
-}
-
-/* For iOS Safari */
-html {
-    height: -webkit-fill-available;
 }
