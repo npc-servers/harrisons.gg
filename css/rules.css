@@ -240,3 +240,29 @@ body {
         animation-delay: 1.4s;
     }
 }
+
+/* Modern Browser Effects */
+@supports (backdrop-filter: blur(10px)) {
+    .rule-card {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .rule-card:hover {
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+
+    .disclaimer {
+        background: rgba(71, 1, 28, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .back-btn {
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+}
