@@ -65,7 +65,7 @@ body {
 }
 
 .rule-card:hover {
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -264,5 +264,74 @@ body {
     .back-btn {
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
+    }
+}
+
+.rule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rule-actions {
+    display: flex;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.rule-card:hover .rule-actions {
+    opacity: 1;
+}
+
+.rule-actions button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.rule-actions button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
+.rule-actions i {
+    font-size: 1rem;
+}
+
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    z-index: 1000;
+    animation: fadeInOut 3s ease forwards;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translate(-50%, 1rem); }
+    10% { opacity: 1; transform: translate(-50%, 0); }
+    90% { opacity: 1; transform: translate(-50%, 0); }
+    100% { opacity: 0; transform: translate(-50%, -1rem); }
+}
+
+@media (max-width: 480px) {
+    .rule-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .rule-actions {
+        opacity: 1;
     }
 }
