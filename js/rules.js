@@ -45,6 +45,11 @@ function collapseAllExcept(targetId) {
 
 // Initialize rules functionality
 function initRules() {
+    // Set animation order for rule cards
+    document.querySelectorAll('.rule-card').forEach((card, index) => {
+        card.style.setProperty('--animation-order', index);
+    });
+
     // Handle rule card clicks
     document.querySelectorAll('.rule-card').forEach(card => {
         card.addEventListener('click', (e) => {
