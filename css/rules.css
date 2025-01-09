@@ -16,11 +16,12 @@ body {
 .container {
     min-height: 100vh;
     width: 100%;
+    background-image: none;
     position: relative;
     padding: 80px 20px 20px 20px;
 }
 
-/* Add a fixed background wrapper */
+/* Add a new fixed background wrapper */
 body::before {
     content: '';
     position: fixed;
@@ -31,11 +32,7 @@ body::before {
     background-image: url('../hhbg.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     z-index: -2;
-    will-change: transform;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
 }
 
 /* Update overlay */
@@ -48,9 +45,6 @@ body::after {
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
     z-index: -1;
-    will-change: transform;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
 }
 
 /* Remove old overlay */
