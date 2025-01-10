@@ -11,7 +11,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    min-height: 100vh;
+    min-height: 100dvh;
 }
 
 .overlay {
@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-    min-height: 100vh;
+    min-height: 100dvh;
     width: 100%;
     display: flex;
     justify-content: center;

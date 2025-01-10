@@ -7,13 +7,14 @@
 body {
     font-family: 'Squada One', cursive;
     background-color: #47011c;
-    min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-image: url('../hhbg.png');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     position: relative;
 }
 
