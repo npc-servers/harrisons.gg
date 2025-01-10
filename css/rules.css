@@ -11,45 +11,28 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
     background-color: #47011c;
-}
-
-.container {
-    min-height: 100vh;
-    width: 100%;
-    background-image: none;
-    position: relative;
-    padding: 80px 20px 20px 20px;
-}
-
-/* Add a new fixed background wrapper */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     background-image: url('../hhbg.png');
     background-size: cover;
     background-position: center;
-    z-index: -2;
+    background-attachment: fixed;
 }
 
-/* Update overlay */
-body::after {
-    content: '';
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.5);
-    z-index: -1;
+    z-index: 0;
 }
 
-/* Remove old overlay */
-.container::before {
-    display: none;
+.container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    padding: 80px 20px 20px 20px;
+    z-index: 1;
 }
 
 .rules-container {
