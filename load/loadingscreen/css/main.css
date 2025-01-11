@@ -76,6 +76,18 @@ nav {
     font-size: 1.4em;
 }
 
+/* Remove transitions for browsers without backdrop-filter */
+nav:not(.backdrop-supported) *,
+#side-panel:not(.backdrop-supported) *,
+#tips-panel:not(.backdrop-supported) *,
+.title:not(.backdrop-supported) *,
+#announcement:not(.backdrop-supported),
+#steamid:not(.backdrop-supported),
+.history-item:not(.backdrop-supported) {
+    transition: none !important;
+    opacity: 1 !important;
+}
+
 #side-panel {
     background: rgba(44, 2, 17, 0.9);
     position: fixed;
