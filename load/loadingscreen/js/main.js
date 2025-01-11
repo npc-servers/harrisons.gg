@@ -7,7 +7,6 @@ var totalCalled = false;
 var downloadingFileCalled = false;
 var percentage = 0;
 var permanent = false;
-var hasBlurSupport = CSS.supports('(-webkit-backdrop-filter: blur(10px))') || CSS.supports('(backdrop-filter: blur(10px))');
 
 // Basic utility functions
 function fadeIn(element) {
@@ -22,15 +21,11 @@ function setLoad(percentage) {
 function announce(message, ispermanent) {
     if (!permanent) {
         var announcement = document.getElementById("announcement");
-        if (hasBlurSupport) {
-            announcement.style.opacity = '0';
-            setTimeout(function() {
-                announcement.innerHTML = message;
-                announcement.style.opacity = '1';
-            }, 500);
-        } else {
+        announcement.style.opacity = '0';
+        setTimeout(function() {
             announcement.innerHTML = message;
-        }
+            announcement.style.opacity = '1';
+        }, 500);
     }
     if (ispermanent) {
         permanent = true;
@@ -47,6 +42,15 @@ function loadAll() {
         document.querySelector('.title h2').textContent = titleMessage.heading;
         document.querySelector('.title h1').textContent = titleMessage.subheading;
     }
+
+    setTimeout(function() {
+        if (downloadingFileCalled) {
+            announce(
+                "This is your first time joining, please wait for the files to download. ZGRAD loads faster than other servers!",
+                true
+            );
+        }
+    }, 10000);
 }
 
 /**
@@ -58,71 +62,57 @@ function getRandomIndex(array) {
 }
 
 function rotateElements(index) {
-    if (!Config.enableRotatingTitles) {
-        return;
+  if (!Config.enableRotatingTitles) {
+      return;
+  }
+
+  // Rotate title
+  if (Config.titleMessages && Config.titleMessages.length > 0) {
+      var titleMessage = Config.titleMessages[index % Config.titleMessages.length];
+      var h2Element = document.querySelector('.title h2');
+      var h1Element = document.querySelector('.title h1');
+
+      h2Element.style.opacity = '0';
+      h1Element.style.opacity = '0';
+
+      setTimeout(function() {
+          h2Element.textContent = titleMessage.heading;
+          h1Element.textContent = titleMessage.subheading;
+          h2Element.style.opacity = '1';
+          h1Element.style.opacity = '1';
+      }, 500);
+      if (Config.tipMessages && Config.tipMessages.length > 0) {
+        var tipContent = document.getElementById("tip-content");
+        tipContent.style.opacity = '0';
+
+        setTimeout(function() {
+            tipContent.textContent = Config.tipMessages[getRandomIndex(Config.tipMessages)];
+            tipContent.style.opacity = '1';
+        }, 500);
     }
+}
 
-    // Rotate title
-    if (Config.titleMessages && Config.titleMessages.length > 0) {
-        var titleMessage = Config.titleMessages[index % Config.titleMessages.length];
-        var h2Element = document.querySelector('.title h2');
-        var h1Element = document.querySelector('.title h1');
+  // Rotate announcement
+  if (Config.enableAnnouncements && Config.announceMessages && Config.announceMessages.length > 0) {
+      var announcement = document.getElementById("announcement");
+      announcement.style.opacity = '0';
 
-        if (hasBlurSupport) {
-            h2Element.style.opacity = '0';
-            h1Element.style.opacity = '0';
-            setTimeout(function() {
-                h2Element.textContent = titleMessage.heading;
-                h1Element.textContent = titleMessage.subheading;
-                h2Element.style.opacity = '1';
-                h1Element.style.opacity = '1';
-            }, 500);
-        } else {
-            h2Element.textContent = titleMessage.heading;
-            h1Element.textContent = titleMessage.subheading;
-        }
+      setTimeout(function() {
+          announcement.textContent = Config.announceMessages[index % Config.announceMessages.length];
+          announcement.style.opacity = '1';
+      }, 500);
+  }
 
-        if (Config.tipMessages && Config.tipMessages.length > 0) {
-            var tipContent = document.getElementById("tip-content");
-            if (hasBlurSupport) {
-                tipContent.style.opacity = '0';
-                setTimeout(function() {
-                    tipContent.textContent = Config.tipMessages[getRandomIndex(Config.tipMessages)];
-                    tipContent.style.opacity = '1';
-                }, 500);
-            } else {
-                tipContent.textContent = Config.tipMessages[getRandomIndex(Config.tipMessages)];
-            }
-        }
-    }
+  // Rotate custom text
+  if (Config.enableCustomText && Config.customTexts && Config.customTexts.length > 0) {
+      var steamid = document.getElementById("steamid");
+      steamid.style.opacity = '0';
 
-    // Rotate announcement
-    if (Config.enableAnnouncements && Config.announceMessages && Config.announceMessages.length > 0) {
-        var announcement = document.getElementById("announcement");
-        if (hasBlurSupport) {
-            announcement.style.opacity = '0';
-            setTimeout(function() {
-                announcement.textContent = Config.announceMessages[index % Config.announceMessages.length];
-                announcement.style.opacity = '1';
-            }, 500);
-        } else {
-            announcement.textContent = Config.announceMessages[index % Config.announceMessages.length];
-        }
-    }
-
-    // Rotate custom text
-    if (Config.enableCustomText && Config.customTexts && Config.customTexts.length > 0) {
-        var steamid = document.getElementById("steamid");
-        if (hasBlurSupport) {
-            steamid.style.opacity = '0';
-            setTimeout(function() {
-                steamid.textContent = Config.customTexts[index % Config.customTexts.length];
-                steamid.style.opacity = '1';
-            }, 500);
-        } else {
-            steamid.textContent = Config.customTexts[index % Config.customTexts.length];
-        }
-    }
+      setTimeout(function() {
+          steamid.textContent = Config.customTexts[index % Config.customTexts.length];
+          steamid.style.opacity = '1';
+      }, 500);
+  }
 }
 
 function rotateSidePanel() {
@@ -131,21 +121,16 @@ function rotateSidePanel() {
         var content = document.querySelector('.side-content');
         var randomIndex = getRandomIndex(Config.sidePanelMessages);
         
-        if (hasBlurSupport) {
-            header.style.opacity = '0';
-            content.style.opacity = '0';
-            setTimeout(function() {
-                var message = Config.sidePanelMessages[randomIndex];
-                header.textContent = message.header;
-                content.textContent = message.content;
-                header.style.opacity = '1';
-                content.style.opacity = '1';
-            }, 500);
-        } else {
+        header.style.opacity = '0';
+        content.style.opacity = '0';
+
+        setTimeout(function() {
             var message = Config.sidePanelMessages[randomIndex];
             header.textContent = message.header;
             content.textContent = message.content;
-        }
+            header.style.opacity = '1';
+            content.style.opacity = '1';
+        }, 500);
     }
 }
 
