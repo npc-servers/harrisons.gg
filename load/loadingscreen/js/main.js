@@ -73,6 +73,7 @@ function rotateElements(index) {
       if (supportsBackdropFilter) {
           h2Element.style.opacity = '0';
           h1Element.style.opacity = '0';
+
           setTimeout(function() {
               h2Element.textContent = titleMessage.heading;
               h1Element.textContent = titleMessage.subheading;
@@ -132,18 +133,19 @@ function rotateSidePanel() {
         var header = document.querySelector('.side-header');
         var content = document.querySelector('.side-content');
         var randomIndex = getRandomIndex(Config.sidePanelMessages);
-        var message = Config.sidePanelMessages[randomIndex];
         
         if (supportsBackdropFilter) {
             header.style.opacity = '0';
             content.style.opacity = '0';
             setTimeout(function() {
+                var message = Config.sidePanelMessages[randomIndex];
                 header.textContent = message.header;
                 content.textContent = message.content;
                 header.style.opacity = '1';
                 content.style.opacity = '1';
             }, 500);
         } else {
+            var message = Config.sidePanelMessages[randomIndex];
             header.textContent = message.header;
             content.textContent = message.content;
         }
