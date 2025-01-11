@@ -42,15 +42,6 @@ function loadAll() {
         document.querySelector('.title h2').textContent = titleMessage.heading;
         document.querySelector('.title h1').textContent = titleMessage.subheading;
     }
-
-    setTimeout(function() {
-        if (downloadingFileCalled) {
-            announce(
-                "This is your first time joining, please wait for the files to download. ZGRAD loads faster than other servers!",
-                true
-            );
-        }
-    }, 10000);
 }
 
 /**
