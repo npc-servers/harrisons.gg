@@ -145,6 +145,7 @@ h1 {
 #steamid {
   display: none;
   float: right;
+  transition: opacity 0.5s ease-in-out;
   font-size: 1.1em;
 }
 
@@ -156,6 +157,7 @@ h1 {
   margin-right: auto;
   width: 98%;
   text-align: center;
+  transition: opacity 0.5s ease-in-out;
   font-size: 1.1em;
 }
 
@@ -241,36 +243,4 @@ h1 {
 
 .customText {
     font-family: 'Squada One', cursive;
-}
-
-/* Apply transitions only when blur is supported */
-@supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
-  #steamid {
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  #announcement {
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  .title h1,
-  .title h2 {
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  #tip-content {
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  .side-header {
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  .side-content {
-    transition: opacity 0.5s ease-in-out;
-  }
-
-  .history-item {
-    transition: opacity 0.5s ease-in-out;
-  }
 }
