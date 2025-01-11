@@ -73,6 +73,7 @@ nav {
     box-shadow: 0 0 15px rgba(44, 2, 17, 0.8),
     0 0 30px rgba(44, 2, 17, 0.3),
     inset 0 0 15px rgba(44, 2, 17, 0.2);
+    font-size: 1.2em;
 }
 
 #side-panel {
@@ -87,6 +88,7 @@ nav {
     padding: 1%;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 4px;
+    font-size: 1.2em;
 }
 
 #tips-panel {
@@ -100,6 +102,7 @@ nav {
     padding: 10px 0;
     transition: opacity 0.5s ease-in-out;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.2em;
 }
 
 h2 {
@@ -141,7 +144,6 @@ h1 {
 #steamid {
   display: none;
   float: right;
-  font-family: sans-serif, "Verdana";
   transition: opacity 0.5s ease-in-out;
 }
 
@@ -233,4 +235,8 @@ h1 {
   position: relative;
   margin: 0;
   transition: opacity 0.5s ease-in-out;
+}
+
+.customText {
+    font-family: 'Squada One', cursive;
 }
