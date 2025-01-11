@@ -8,9 +8,6 @@ var downloadingFileCalled = false;
 var percentage = 0;
 var permanent = false;
 
-// Check if browser supports backdrop-filter
-var supportsBackdropFilter = CSS.supports('(-webkit-backdrop-filter: blur(1px))') || CSS.supports('(backdrop-filter: blur(1px))');
-
 // Basic utility functions
 function fadeIn(element) {
     element.style.opacity = 1;
@@ -24,15 +21,11 @@ function setLoad(percentage) {
 function announce(message, ispermanent) {
     if (!permanent) {
         var announcement = document.getElementById("announcement");
-        if (supportsBackdropFilter) {
-            announcement.style.opacity = '0';
-            setTimeout(function() {
-                announcement.innerHTML = message;
-                announcement.style.opacity = '1';
-            }, 500);
-        } else {
+        announcement.style.opacity = '0';
+        setTimeout(function() {
             announcement.innerHTML = message;
-        }
+            announcement.style.opacity = '1';
+        }, 500);
     }
     if (ispermanent) {
         permanent = true;
@@ -70,61 +63,46 @@ function rotateElements(index) {
       var h2Element = document.querySelector('.title h2');
       var h1Element = document.querySelector('.title h1');
 
-      if (supportsBackdropFilter) {
-          h2Element.style.opacity = '0';
-          h1Element.style.opacity = '0';
+      h2Element.style.opacity = '0';
+      h1Element.style.opacity = '0';
 
-          setTimeout(function() {
-              h2Element.textContent = titleMessage.heading;
-              h1Element.textContent = titleMessage.subheading;
-              h2Element.style.opacity = '1';
-              h1Element.style.opacity = '1';
-          }, 500);
-      } else {
+      setTimeout(function() {
           h2Element.textContent = titleMessage.heading;
           h1Element.textContent = titleMessage.subheading;
-      }
-
+          h2Element.style.opacity = '1';
+          h1Element.style.opacity = '1';
+      }, 500);
       if (Config.tipMessages && Config.tipMessages.length > 0) {
-          var tipContent = document.getElementById("tip-content");
-          if (supportsBackdropFilter) {
-              tipContent.style.opacity = '0';
-              setTimeout(function() {
-                  tipContent.textContent = Config.tipMessages[getRandomIndex(Config.tipMessages)];
-                  tipContent.style.opacity = '1';
-              }, 500);
-          } else {
-              tipContent.textContent = Config.tipMessages[getRandomIndex(Config.tipMessages)];
-          }
-      }
-  }
+        var tipContent = document.getElementById("tip-content");
+        tipContent.style.opacity = '0';
+
+        setTimeout(function() {
+            tipContent.textContent = Config.tipMessages[getRandomIndex(Config.tipMessages)];
+            tipContent.style.opacity = '1';
+        }, 500);
+    }
+}
 
   // Rotate announcement
   if (Config.enableAnnouncements && Config.announceMessages && Config.announceMessages.length > 0) {
       var announcement = document.getElementById("announcement");
-      if (supportsBackdropFilter) {
-          announcement.style.opacity = '0';
-          setTimeout(function() {
-              announcement.textContent = Config.announceMessages[index % Config.announceMessages.length];
-              announcement.style.opacity = '1';
-          }, 500);
-      } else {
+      announcement.style.opacity = '0';
+
+      setTimeout(function() {
           announcement.textContent = Config.announceMessages[index % Config.announceMessages.length];
-      }
+          announcement.style.opacity = '1';
+      }, 500);
   }
 
   // Rotate custom text
   if (Config.enableCustomText && Config.customTexts && Config.customTexts.length > 0) {
       var steamid = document.getElementById("steamid");
-      if (supportsBackdropFilter) {
-          steamid.style.opacity = '0';
-          setTimeout(function() {
-              steamid.textContent = Config.customTexts[index % Config.customTexts.length];
-              steamid.style.opacity = '1';
-          }, 500);
-      } else {
+      steamid.style.opacity = '0';
+
+      setTimeout(function() {
           steamid.textContent = Config.customTexts[index % Config.customTexts.length];
-      }
+          steamid.style.opacity = '1';
+      }, 500);
   }
 }
 
@@ -134,21 +112,16 @@ function rotateSidePanel() {
         var content = document.querySelector('.side-content');
         var randomIndex = getRandomIndex(Config.sidePanelMessages);
         
-        if (supportsBackdropFilter) {
-            header.style.opacity = '0';
-            content.style.opacity = '0';
-            setTimeout(function() {
-                var message = Config.sidePanelMessages[randomIndex];
-                header.textContent = message.header;
-                content.textContent = message.content;
-                header.style.opacity = '1';
-                content.style.opacity = '1';
-            }, 500);
-        } else {
+        header.style.opacity = '0';
+        content.style.opacity = '0';
+
+        setTimeout(function() {
             var message = Config.sidePanelMessages[randomIndex];
             header.textContent = message.header;
             content.textContent = message.content;
-        }
+            header.style.opacity = '1';
+            content.style.opacity = '1';
+        }, 500);
     }
 }
 
