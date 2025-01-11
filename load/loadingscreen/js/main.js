@@ -37,24 +37,6 @@ function loadAll() {
     fadeIn(document.querySelector("nav"));
     fadeIn(document.querySelector("main"));
 
-    // Set initial opacity for all rotating elements
-    if (!supportsBlur) {
-        var elements = [
-            document.querySelector('.title h2'),
-            document.querySelector('.title h1'),
-            document.getElementById('tip-content'),
-            document.getElementById('announcement'),
-            document.getElementById('steamid'),
-            document.querySelector('.side-header'),
-            document.querySelector('.side-content')
-        ];
-        elements.forEach(function(element) {
-            if (element) {
-                element.style.opacity = '1';
-            }
-        });
-    }
-
     // Initialize first title if rotation is disabled
     if (!Config.enableRotatingTitles && Config.titleMessages && Config.titleMessages.length > 0) {
         var titleMessage = Config.titleMessages[0];
