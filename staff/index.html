@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Access - Harrison's Homigrad</title>
+    <link rel="icon" type="image/x-icon" href="../hh_logo_square.ico">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/staff/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="login-container">
+            <h1 class="login-title">Staff Access</h1>
+            <form id="login-form" class="login-form" onsubmit="return false;">
+                <input type="password" id="password" class="password-input" placeholder="Enter password" required>
+                <button type="submit" class="submit-btn">Access Guidelines</button>
+            </form>
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+    <script src="../js/staff-config.js"></script>
+    <script src="../js/staff/auth.js"></script>
+    <script>
+        // Check if already authenticated
+        if (checkExistingAuth()) {
+            setTimeout(() => {
+                window.location.href = 'guidelines.html';
+            }, StaffConfig.redirectDelay);
+        }
+
+        // Handle form submission
+        document.getElementById('login-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            
+            if (await handleLogin(password)) {
+                setTimeout(() => {
+                    window.location.href = 'guidelines.html';
+                }, StaffConfig.redirectDelay);
+            } else {
+                document.getElementById('password').value = '';
+            }
+        });
+    </script>
+</body>
+</html> 

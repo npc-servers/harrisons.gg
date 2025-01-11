@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Guidelines - Harrison's Homigrad</title>
+    <link rel="icon" type="image/x-icon" href="../hh_logo_square.ico">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/staff/guidelines.css">
+    <link href="https://fonts.googleapis.com/css2?family=Squada+One&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="guidelines-container">
+            <nav class="guidelines-nav">
+                <a href="../" class="back-btn">← Back to Home</a>
+                <div class="search-container">
+                    <input type="text" id="guidelinesSearch" class="search-input" placeholder="Search guidelines, punishments, or commands...">
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+                <div class="category-tabs">
+                    <button class="tab-btn active" data-category="home">Home</button>
+                    <button class="tab-btn" data-category="conduct">Conduct</button>
+                    <button class="tab-btn" data-category="moderation">Moderation</button>
+                    <button class="tab-btn" data-category="punishments">Punishments</button>
+                </div>
+            </nav>
+
+            <h1 class="guidelines-title">Staff Guidelines</h1>
+            
+            <!-- Home Section -->
+            <div class="guidelines-section active" data-category="home">
+                <div class="welcome-banner">
+                    <i class="fas fa-shield-alt banner-icon"></i>
+                    <h2>Welcome to the Staff Portal</h2>
+                    <p>Your comprehensive guide to moderating Harrison's Homigrad</p>
+                </div>
+
+                <div class="quick-links">
+                    <div class="quick-link-card" onclick="document.querySelector('[data-category=\'conduct\']').click()">
+                        <i class="fas fa-star"></i>
+                        <h3>Staff Conduct</h3>
+                        <p>Learn about staff expectations and responsibilities</p>
+                    </div>
+                    <div class="quick-link-card" onclick="document.querySelector('[data-category=\'moderation\']').click()">
+                        <i class="fas fa-gavel"></i>
+                        <h3>Moderation Guide</h3>
+                        <p>Step-by-step guide to handling incidents</p>
+                    </div>
+                    <div class="quick-link-card" onclick="document.querySelector('[data-category=\'punishments\']').click()">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Punishment Guide</h3>
+                        <p>Reference for violation types and durations</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box info">
+                    <i class="fas fa-info-circle"></i>
+                    <div class="highlight-content">
+                        <h3>Quick Tips</h3>
+                        <ul class="quick-tips">
+                            <li>Use the search bar above to quickly find specific guidelines or punishments</li>
+                            <li>Check the Punishment Guide for standardized ban durations</li>
+                            <li>Always try to de-escalate situations before taking action</li>
+                            <li>Document all actions in the appropriate channels</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tools-section">
+                    <h3><i class="fas fa-tools"></i> Essential Tools</h3>
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <h4>ULX Menu</h4>
+                            <code>bind KEY "ulx menu"</code>
+                            <p>Main moderation interface</p>
+                        </div>
+                        <div class="tool-card">
+                            <h4>AWarn3 Menu</h4>
+                            <code>bind KEY "awarn menu"</code>
+                            <p>Warning system interface</p>
+                        </div>
+                        <div class="tool-card">
+                            <h4>FSpectate</h4>
+                            <code>bind KEY fspectate</code>
+                            <p>Player observation tool</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conduct Section -->
+            <div class="guidelines-section" data-category="conduct">
+                <div class="section-header">
+                    <i class="fas fa-star section-icon"></i>
+                    <h2 class="section-title">Staff Conduct & Responsibilities</h2>
+                </div>
+
+                <div class="highlight-box warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div class="highlight-content">
+                        <h3>Core Principle</h3>
+                        <p>Your actions represent NPCZ as a whole. As staff, you hold an authoritative position that demands higher behavioral standards and professionalism.</p>
+                    </div>
+                </div>
+
+                <div class="guidelines-grid">
+                    <div class="guideline-card">
+                        <h3>Expected Behavior</h3>
+                        <ul class="guidelines-list">
+                            <li>Maintain respectful communication at all times</li>
+                            <li>Treat all players equally, including rule breakers</li>
+                            <li>Keep disagreements and arguments in private channels</li>
+                            <li>Avoid public confrontations that could disrupt the community</li>
+                            <li>Lead by example in following server rules</li>
+                        </ul>
+                    </div>
+
+                    <div class="guideline-card">
+                        <h3>Core Responsibilities</h3>
+                        <ul class="guidelines-list">
+                            <li>Respond promptly to player reports and tickets</li>
+                            <li>Monitor both in-game chat and Discord channels</li>
+                            <li>Document incidents and actions appropriately</li>
+                            <li>Participate in staff meetings when available</li>
+                            <li>Stay updated on policy changes and announcements</li>
+                        </ul>
+                    </div>
+
+                    <div class="guideline-card">
+                        <h3>Professional Standards</h3>
+                        <ul class="guidelines-list">
+                            <li>Use appropriate language and tone</li>
+                            <li>Maintain composure in challenging situations</li>
+                            <li>Avoid misuse of staff permissions</li>
+                            <li>Follow proper documentation procedures</li>
+                            <li>Seek assistance when needed</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Moderation Section -->
+            <div class="guidelines-section" data-category="moderation">
+                <div class="section-header">
+                    <i class="fas fa-shield-alt section-icon"></i>
+                    <h2 class="section-title">Moderation Guidelines</h2>
+                </div>
+
+                <div class="highlight-box info">
+                    <i class="fas fa-info-circle"></i>
+                    <div class="highlight-content">
+                        <h3>De-escalation First</h3>
+                        <p>Always attempt to resolve situations through de-escalation before resorting to punitive measures. Our goal is to maintain a positive community while minimizing the need for bans.</p>
+                    </div>
+                </div>
+
+                <div class="moderation-flow">
+                    <div class="flow-step">
+                        <div class="step-number">1</div>
+                        <h3>Initial Contact</h3>
+                        <p>Address the situation calmly and issue a verbal warning if needed</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="step-number">2</div>
+                        <h3>Official Warning</h3>
+                        <p>Use !warn command with specific violation if behavior continues</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="step-number">3</div>
+                        <h3>Intermediate Action</h3>
+                        <p>Apply mute/gag or short timeout if appropriate</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="step-number">4</div>
+                        <h3>Final Action</h3>
+                        <p>Issue ban with appropriate duration if behavior persists</p>
+                    </div>
+                </div>
+
+                <div class="guidelines-grid">
+                    <div class="guideline-card">
+                        <h3>Ticket Management</h3>
+                        <ul class="guidelines-list">
+                            <li>Review all available evidence thoroughly</li>
+                            <li>Request additional information if needed</li>
+                            <li>Document actions taken in detail</li>
+                            <li>Use standard closure formats:
+                                <ul>
+                                    <li>"Resolved - [action] [note]"</li>
+                                    <li>"Invalid - [reason]"</li>
+                                    <li>"Unresponsive - [detail]"</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="guideline-card">
+                        <h3>Documentation Format</h3>
+                        <ul class="guidelines-list">
+                            <li>Ban format:
+                                <code>reason1 | reason2 | note | ticket#</code>
+                            </li>
+                            <li>Warning format:
+                                <code>reason | note | ticket#</code>
+                            </li>
+                            <li>Always use | as separator</li>
+                            <li>Include ticket number if applicable</li>
+                            <li>Use standardized reason texts</li>
+                        </ul>
+                    </div>
+
+                    <div class="guideline-card">
+                        <h3>Valid Notes</h3>
+                        <ul class="guidelines-list">
+                            <li>NITFR - No intention to follow rules</li>
+                            <li>LTAP - Leaving to avoid punishment</li>
+                            <li>NR - No Response</li>
+                            <li>Previously Warned - Repeat offense</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Punishments Section -->
+            <div class="guidelines-section" data-category="punishments">
+                <div class="section-header">
+                    <i class="fas fa-gavel section-icon"></i>
+                    <h2 class="section-title">Punishment Guidelines</h2>
+                </div>
+
+                <div class="highlight-box warning">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div class="highlight-content">
+                        <h3>Repeat Offenses</h3>
+                        <p>For repeat offenses, double the previous ban duration. This can be applied retroactively if previous bans weren't doubled. You may exceed double time for particularly egregious cases.</p>
+                    </div>
+                </div>
+
+                <div class="punishment-categories">
+                    <div class="category-section severe">
+                        <h3><i class="fas fa-radiation"></i> Severe Violations</h3>
+                        <div class="punishment-grid">
+                            <div class="punishment-card">
+                                <h4>Permanent Bans</h4>
+                                <ul>
+                                    <li>Cheating (external scripts/modified clients)</li>
+                                    <li>Exploiting (server vulnerabilities)</li>
+                                    <li>Dox Threats</li>
+                                </ul>
+                            </div>
+                            <div class="punishment-card">
+                                <h4>Extended Bans</h4>
+                                <ul>
+                                    <li>Server Raiding - 32 weeks</li>
+                                    <li>Ban Evasion - 32 weeks</li>
+                                </ul>
+                            </div>
+                            <div class="punishment-card">
+                                <h4>Major Offenses</h4>
+                                <ul>
+                                    <li>Discriminatory Behavior - 3 days</li>
+                                    <li>Discriminatory Model - 3 days</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-section moderate">
+                        <h3><i class="fas fa-exclamation-circle"></i> Moderate Violations</h3>
+                        <div class="punishment-grid">
+                            <div class="punishment-card">
+                                <h4>24 Hour Bans</h4>
+                                <ul>
+                                    <li>Harassment</li>
+                                    <li>Inappropriate Language/Behavior</li>
+                                    <li>NSFW Outfitter Model</li>
+                                </ul>
+                            </div>
+                            <div class="punishment-card">
+                                <h4>12 Hour Bans</h4>
+                                <ul>
+                                    <li>Minge/Toxicity</li>
+                                    <li>Model Abuse</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-section minor">
+                        <h3><i class="fas fa-info-circle"></i> Minor Violations</h3>
+                        <div class="punishment-grid">
+                            <div class="punishment-card">
+                                <h4>Temporary Actions</h4>
+                                <ul>
+                                    <li>Chat/Mic Spam - Mute/Gag</li>
+                                    <li>Foreign Language - Mute/Gag</li>
+                                    <li>NSFW Profile - 1 hour or Kick</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/staff-config.js"></script>
+    <script src="../js/staff/auth.js"></script>
+    <script>
+        // Check authentication on page load
+        checkAuth();
+
+        // Handle tab switching
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active tab
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Show corresponding section
+                const category = button.dataset.category;
+                document.querySelectorAll('.guidelines-section').forEach(section => {
+                    section.classList.remove('active');
+                    if (section.dataset.category === category) {
+                        section.classList.add('active');
+                    }
+                });
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.getElementById('guidelinesSearch');
+        const searchResults = document.getElementById('searchResults');
+        let searchTimeout;
+
+        function highlightText(text, query) {
+            if (!query) return text;
+            const regex = new RegExp(`(${query})`, 'gi');
+            return text.replace(regex, '<span class="highlight">$1</span>');
+        }
+
+        function collectSearchableContent() {
+            const content = [];
+            document.querySelectorAll('.guidelines-section').forEach(section => {
+                const category = section.dataset.category;
+                
+                // Search in cards
+                section.querySelectorAll('.guideline-card, .punishment-card').forEach(card => {
+                    const title = card.querySelector('h3, h4')?.textContent || '';
+                    const listItems = Array.from(card.querySelectorAll('li')).map(li => li.textContent);
+                    const searchText = `${title} ${listItems.join(' ')}`;
+                    
+                    // Add common variations for better matching
+                    const variations = [];
+                    if (searchText.includes('hour')) variations.push(searchText.replace('hour', 'hr'));
+                    if (searchText.includes('hr')) variations.push(searchText.replace('hr', 'hour'));
+                    if (searchText.includes('permanent')) variations.push(searchText.replace('permanent', 'perm'));
+                    if (searchText.includes('perm')) variations.push(searchText.replace('perm', 'permanent'));
+                    
+                    content.push({
+                        category,
+                        title,
+                        text: searchText,
+                        variations,
+                        element: card
+                    });
+                });
+
+                // Search in highlight boxes
+                section.querySelectorAll('.highlight-box').forEach(box => {
+                    const title = box.querySelector('h3')?.textContent || '';
+                    const text = box.querySelector('p')?.textContent || '';
+                    content.push({
+                        category,
+                        title,
+                        text,
+                        variations: [],
+                        element: box
+                    });
+                });
+
+                // Search in moderation steps
+                section.querySelectorAll('.flow-step').forEach(step => {
+                    const title = step.querySelector('h3')?.textContent || '';
+                    const text = step.querySelector('p')?.textContent || '';
+                    content.push({
+                        category,
+                        title,
+                        text: `${title} ${text}`,
+                        variations: [],
+                        element: step
+                    });
+                });
+
+                // Search in category sections
+                section.querySelectorAll('.category-section').forEach(catSection => {
+                    const title = catSection.querySelector('h3')?.textContent || '';
+                    const items = Array.from(catSection.querySelectorAll('li')).map(li => li.textContent);
+                    content.push({
+                        category,
+                        title,
+                        text: `${title} ${items.join(' ')}`,
+                        variations: [],
+                        element: catSection
+                    });
+                });
+            });
+            return content;
+        }
+
+        function performSearch(query) {
+            const searchableContent = collectSearchableContent();
+            if (!query) {
+                searchResults.classList.remove('active');
+                return;
+            }
+
+            const results = {};
+            const searchTerms = query.toLowerCase().split(/\s+/);
+            
+            searchableContent.forEach(item => {
+                const searchText = item.text.toLowerCase();
+                const allTexts = [searchText, ...item.variations.map(v => v.toLowerCase())];
+                
+                // Check if ALL search terms are found in ANY of the text variations
+                const matches = searchTerms.every(term => 
+                    allTexts.some(text => text.includes(term))
+                );
+                
+                if (matches) {
+                    if (!results[item.category]) {
+                        results[item.category] = [];
+                    }
+                    
+                    // Highlight all search terms
+                    let highlightedText = item.text;
+                    let highlightedTitle = item.title;
+                    
+                    searchTerms.forEach(term => {
+                        const regex = new RegExp(`(${term})`, 'gi');
+                        highlightedText = highlightedText.replace(regex, '<span class="highlight">$1</span>');
+                        highlightedTitle = highlightedTitle.replace(regex, '<span class="highlight">$1</span>');
+                    });
+                    
+                    results[item.category].push({
+                        title: highlightedTitle,
+                        text: highlightedText,
+                        element: item.element
+                    });
+                }
+            });
+
+            // Display results
+            if (Object.keys(results).length === 0) {
+                searchResults.innerHTML = '<div class="no-results">No results found</div>';
+            } else {
+                searchResults.innerHTML = Object.entries(results).map(([category, items]) => `
+                    <div class="search-category">
+                        ${category.charAt(0).toUpperCase() + category.slice(1)}
+                    </div>
+                    ${items.map(item => `
+                        <div class="search-item" data-element-id="${item.element.id}">
+                            <strong>${item.title}</strong>
+                            <p>${item.text}</p>
+                        </div>
+                    `).join('')}
+                `).join('');
+
+                // Add click handlers to search results
+                searchResults.querySelectorAll('.search-item').forEach(item => {
+                    item.addEventListener('click', () => {
+                        const element = item.dataset.elementId ? 
+                            document.getElementById(item.dataset.elementId) : 
+                            document.querySelector(`[data-category="${item.dataset.category}"]`);
+                        
+                        if (element) {
+                            // Show the correct category tab
+                            const category = element.closest('.guidelines-section').dataset.category;
+                            document.querySelector(`.tab-btn[data-category="${category}"]`).click();
+                            
+                            // Scroll to the element
+                            element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            
+                            // Highlight the element temporarily
+                            element.style.transition = 'background-color 0.3s ease';
+                            element.style.backgroundColor = 'rgba(255, 51, 102, 0.2)';
+                            setTimeout(() => {
+                                element.style.backgroundColor = '';
+                            }, 2000);
+                            
+                            // Hide search results
+                            searchResults.classList.remove('active');
+                            searchInput.value = '';
+                        }
+                    });
+                });
+            }
+            searchResults.classList.add('active');
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                performSearch(e.target.value.trim());
+            }, 300);
+        });
+
+        // Close search results when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html> 
