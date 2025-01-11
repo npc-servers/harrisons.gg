@@ -61,32 +61,6 @@ main {
         inset 0 0 15px rgba(44, 2, 17, 0.2);
         z-index: 2;
     }
-
-    #announcement {
-        transition: opacity 0.5s ease-in-out;
-    }
-
-    #steamid {
-        transition: opacity 0.5s ease-in-out;
-    }
-
-    #tip-content {
-        transition: opacity 0.5s ease-in-out;
-    }
-
-    .title h1,
-    .title h2 {
-        transition: opacity 0.5s ease-in-out;
-    }
-
-    .side-header,
-    .side-content {
-        transition: opacity 0.5s ease-in-out;
-    }
-
-    .history-item {
-        transition: opacity 0.5s ease-in-out;
-    }
 }
 
 /* Fallback styles for browsers without backdrop-filter support */
@@ -171,6 +145,7 @@ h1 {
 #steamid {
   display: none;
   float: right;
+  transition: opacity 0.5s ease-in-out;
   font-size: 1.1em;
 }
 
@@ -182,6 +157,7 @@ h1 {
   margin-right: auto;
   width: 98%;
   text-align: center;
+  transition: opacity 0.5s ease-in-out;
   font-size: 1.1em;
 }
 
@@ -234,6 +210,7 @@ h1 {
 }
 
 .history-item {
+  transition: opacity 0.5s ease-in-out;
   margin: 2px 0;
   padding: 2px 0;
 }
@@ -245,6 +222,7 @@ h1 {
 
 #tip-content {
   text-align: center;
+  transition: opacity 0.5s ease-in-out;
   margin: 0;
 }
 
@@ -254,11 +232,13 @@ h1 {
   text-align: center;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(71, 1, 28, 0.3);
+  transition: opacity 0.5s ease-in-out;
 }
 
 .side-content {
   position: relative;
   margin: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .customText {
