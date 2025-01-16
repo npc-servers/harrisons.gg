@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="server-description">${descriptionWithIcon}</div>
                 </div>
-                <a href="${server.link}" class="server-connect">
+                <a href="${server.link}" class="server-connect" onclick="handleConnectClick(event, '${server.link}')">
                     <span class="desktop-text">Connect to Server</span>
                     <span class="mobile-text">Only available on PC</span>
                 </a>
@@ -205,6 +205,18 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 300);
         }
     }
+
+    // Add this new function to handle connect button clicks
+    window.handleConnectClick = function(event, link) {
+        // Check if mobile
+        if (window.innerWidth <= 768) {
+            event.preventDefault();
+            document.getElementById('joinGuide').style.display = 'flex';
+        } else {
+            // On desktop, let the link work normally
+            return true;
+        }
+    };
 
     // Initial render
     updateServerCards();
