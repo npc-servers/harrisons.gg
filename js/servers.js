@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'ZGRAD US1',
             ip: '193.243.190.18',
             port: 27066,
-            region: 'US',
             logo: 'https://zgrad.gg/assets/logos/logo-whiteout.png',
             description: 'All Gamemodes',
             link: '/us1/connect.html'
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Harrisons Homigrad US1',
             ip: '193.243.190.18',
             port: 27051,
-            region: 'US',
             logo: '/hh_logo_square.png',
             description: 'All Gamemodes',
             link: '/hh1'
@@ -29,7 +27,6 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Harrisons Homigrad US2',
             ip: '193.243.190.18',
             port: 27052,
-            region: 'US',
             logo: '/hh_logo_square.png',
             description: 'All Gamemodes',
             link: '/hh2'
@@ -39,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Harrisons Homigrad US3',
             ip: '193.243.190.18',
             port: 27053,
-            region: 'US',
             logo: '/hh_logo_square.png',
             description: 'Homicide Only',
             link: '/hh3'
@@ -50,6 +46,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const isZgrad = server.id.startsWith('zgrad');
         const websiteButton = isZgrad ? 
             `<a href="https://zgrad.gg" class="server-website" target="_blank">View Website</a>` : '';
+        
+        let descriptionWithIcon = server.description;
+        if (server.description.toLowerCase().includes('homicide')) {
+            descriptionWithIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" class="knife-icon"><path fill="currentColor" d="M4.343 1.408L22.374 19.44a1.5 1.5 0 1 1-2.121 2.122l-4.596-4.596L12.12 20.5L8 16.38V19a1 1 0 1 1-2 0v-4a1 1 0 0 0-1.993-.117L4.001 15v1a1 1 0 1 1-2 0V7.214A7.98 7.98 0 0 1 4.17 1.587z"/></svg> ${server.description}`;
+        } else if (server.description.toLowerCase().includes('all gamemodes')) {
+            descriptionWithIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" class="dashboard-icon"><path fill="currentColor" d="M3 12a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1zm0 8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1zm10 0a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1zm1-17a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1z"/></svg> ${server.description}`;
+        }
 
         return `
             <div class="server-card ${animate ? 'animate-in' : ''}" data-server-id="${server.id}">
@@ -61,15 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 </div>
                 <div class="server-info">
-                    <div class="server-region">
-                        <img src="${FLAGS[server.region]}" alt="${server.region}" class="region-flag">
-                        ${server.region} Region
-                    </div>
                     <div class="server-players">
                         <span class="server-status ${status.online ? 'online' : 'offline'}"></span>
                         ${status.online ? `${status.players} players online` : 'Offline'}
                     </div>
-                    <div class="server-description">${server.description}</div>
+                    <div class="server-description">${descriptionWithIcon}</div>
                 </div>
                 <a href="${server.link}" class="server-connect">Connect to Server</a>
             </div>

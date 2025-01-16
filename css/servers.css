@@ -75,20 +75,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-}
-
-.server-region {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.region-flag {
-    width: 20px;
-    height: 15px;
-    object-fit: contain;
+    gap: 1rem;
 }
 
 .server-players {
@@ -210,6 +197,24 @@
 
 .server-description {
     flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.server-description svg {
+    margin-right: 0.5rem;
+    width: 14px;
+    height: 14px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.server-description .knife-icon {
+    color: #f44336;
+}
+
+.server-description .dashboard-icon {
+    color: #4CAF50;
 }
 
 /* Responsive Design */
