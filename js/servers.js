@@ -70,7 +70,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                     <div class="server-description">${descriptionWithIcon}</div>
                 </div>
-                <a href="${server.link}" class="server-connect">Connect to Server</a>
+                <a href="${server.link}" class="server-connect">
+                    <span class="desktop-text">Connect to Server</span>
+                    <span class="mobile-text">Only available on PC</span>
+                </a>
             </div>
         `;
     }
