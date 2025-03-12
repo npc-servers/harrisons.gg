@@ -2,55 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harrison's Homigrad</title>
+    <meta http-equiv="refresh" content="0; url=https://zgrad.gg/harrisons">
+    <title>Redirecting to ZGRAD</title>
     <link rel="icon" type="image/x-icon" href="hh_logo_square.ico">
-    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="js/config.js"></script>
-    <script src="playercount.js"></script>
+    <link rel="stylesheet" href="css/redirect.css">
 </head>
 <body>
-    <div id="sales-banner"></div>
-    <div class="overlay"></div>
-    <div class="container">
-        <div class="content">
-            <h1 class="title">
-                HARRISONS<br>HOMIGRAD
-            </h1>
-            <div class="player-count">
-                <span id="totalPlayers">Loading...</span> players online
-            </div>
-            <div class="buttons">
-                <a href="https://discord.gg/harrisons" class="btn" target="_blank">Discord</a>
-                <a href="/store/index.html" class="btn" target="_blank">Donate</a>
-                <a href="rules.html" class="btn">Rules</a>
-                <a href="servers.html" class="btn">Servers</a>
-            </div>
-            <div class="social-icons">
-                <a href="/socials" class="social-icon" target="_blank" title="TikTok">
-                    <i class="fab fa-tiktok"></i>
-                </a>
-                <a href="https://zgrad.gg" class="social-icon" target="_blank" title="ZGRAD">
-                    <img src="https://zgrad.gg/assets/logos/logo-whiteout.png" alt="ZGRAD" class="icon-image">
-                </a>
-            </div>
-        </div>
+    <div class="content">
+        <h1>REDIRECTING TO ZGRAD</h1>
+        <p>If you are not redirected automatically,</p>
+        <a href="https://zgrad.gg/harrisons">Go to ZGRAD</a>
     </div>
-    <script>
-        // Initialize sales banner
-        if (SiteConfig.sales.enabled) {
-            const banner = document.getElementById('sales-banner');
-            banner.innerHTML = `
-                <a href="${SiteConfig.sales.link}" class="banner-content">
-                    <span class="banner-message">${SiteConfig.sales.message}</span>
-                    <span class="banner-cta" style="color: ${SiteConfig.sales.highlightColor}">${SiteConfig.sales.accentText}</span>
-                </a>
-            `;
-            banner.style.backgroundColor = SiteConfig.sales.backgroundColor;
-            banner.style.color = SiteConfig.sales.textColor;
-        }
-    </script>
 </body>
 </html>
