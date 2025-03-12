@@ -17,7 +17,7 @@ Config.mapPrefix = "Currently playing on ";
 Config.playerCountSuffix = " player slots";
 
 /**
- * Enable custom text in the top right corner of the screen?
+ * Enable custom text in the top right corner?
  */
 Config.enableCustomText = true;
 
@@ -26,18 +26,13 @@ Config.enableCustomText = true;
  * only works if enableCustomText = true
  */
 Config.customTexts = [
-    "Welcome to Harrison's Homigrad!",
-    "Join our Discord: discord.gg/harrisons",
-    "Visit our store: harrisons.gg/store",
-    "Follow us: harrisons.gg/socials",
-    "The best Homigrad experience!",
-    "Actively maintained and developed"
+    "We are now ZGRAD.GG!"
 ];
 
 /**
  * Enable rotating titles?
  */
-Config.enableRotatingTitles = true;
+Config.enableRotatingTitles = false;
 
 /**
  * What messages do you want to show in the title?
@@ -45,16 +40,8 @@ Config.enableRotatingTitles = true;
  */
 Config.titleMessages = [
     {
-        heading: "HARRISON'S HOMIGRAD",
-        subheading: "THE BEST HOMIGRAD EXPERIENCE"
-    },
-    {
-        heading: "JOIN OUR COMMUNITY",
-        subheading: "DISCORD.GG/HARRISONS"
-    },
-    {
-        heading: "SUPPORT THE SERVER",
-        subheading: "HARRISONS.GG/STORE"
+        heading: "HARRISON'S IS NOW ZGRAD.GG",
+        subheading: "SAME GREAT EXPERIENCE, NEW NAME"
     }
 ];
 
@@ -69,11 +56,7 @@ Config.rotationLength = 5000;
  * only works if enableAnnouncements = true
  */
 Config.announceMessages = [
-    "Need help or want to report a player? Visit our Discord!",
-    "Join our community: discord.gg/harrisons",
-    "Press F2 to open the settings menu!",
-    "Found a bug? Report it on our Discord!",
-    "Support the server at harrisons.gg/store"
+    "NEW DISCORD: discord.gg/npc"
 ];
 
 /**
@@ -88,37 +71,18 @@ Config.enableAnnouncements = true;
 Config.announcementLength = 3000;
 
 Config.tipMessages = [
+    "We've rebranded to ZGRAD.GG - Same great experience!",
     "Press F2 to access the settings menu",
     "Press G to ragdoll or get up",
     "Type !help in chat for command list",
-    "Join our Discord for the latest updates",
+    "Join our Discord at discord.gg/npc",
     "Report bugs and cheaters on our Discord"
 ];
 
 Config.sidePanelMessages = [
     {
-        header: "HOMICIDE",
-        content: "Traitors must eliminate innocents before police arrive. Innocents must work together to identify and eliminate the traitors. Some innocents have weapons to defend themselves."
-    },
-    {
-        header: "RIOT",
-        content: "Police vs Rioters - Officers can arrest or eliminate rioters, while rioters fight for their rights. Last team standing wins."
-    },
-    {
-        header: "GANGWAR",
-        content: "Intense gang warfare - Choose your side and fight for territory control. Last gang standing wins."
-    },
-    {
-        header: "TEAM DEATHMATCH",
-        content: "Classic team vs team combat. Work with your team to eliminate the opposition. No respawns."
-    },
-    {
-        header: "HIDE & SEEK",
-        content: "Hiders must survive until police arrive, while seekers hunt them down. Use the environment to your advantage!"
-    },
-    {
-        header: "DEATHMATCH",
-        content: "Every player for themselves in this intense free-for-all combat mode. Last player standing wins!"
+        header: "WE'VE REBRANDED",
+        content: "Harrison's Homigrad is now ZGRAD.GG! We're excited to bring you the same great gaming experience under our new brand. Visit zgrad.gg to learn more!"
     }
 ];
 

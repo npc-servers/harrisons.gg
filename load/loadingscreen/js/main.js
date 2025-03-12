@@ -36,11 +36,41 @@ function loadAll() {
     fadeIn(document.querySelector("nav"));
     fadeIn(document.querySelector("main"));
 
-    // Initialize first title if rotation is disabled
-    if (!Config.enableRotatingTitles && Config.titleMessages && Config.titleMessages.length > 0) {
+    // Initialize announcements
+    if (Config.enableAnnouncements && Config.announceMessages.length > 0) {
+        var announcement = document.getElementById("announcement");
+        announcement.textContent = Config.announceMessages[0];
+        announcement.style.opacity = '1';
+        announcement.style.display = 'block';
+    }
+
+    // Initialize tips
+    if (Config.tipMessages && Config.tipMessages.length > 0) {
+        var tipContent = document.getElementById("tip-content");
+        tipContent.textContent = Config.tipMessages[0];
+        document.getElementById("tips-panel").style.display = 'block';
+    }
+
+    // Initialize custom text
+    if (Config.enableCustomText && Config.customTexts.length > 0) {
+        var steamid = document.getElementById("steamid");
+        steamid.textContent = Config.customTexts[0];
+        steamid.style.display = 'block';
+    }
+
+    // Initialize title
+    if (Config.titleMessages && Config.titleMessages.length > 0) {
         var titleMessage = Config.titleMessages[0];
         document.querySelector('.title h2').textContent = titleMessage.heading;
         document.querySelector('.title h1').textContent = titleMessage.subheading;
+    }
+
+    // Initialize side panel
+    if (Config.sidePanelMessages && Config.sidePanelMessages.length > 0) {
+        var message = Config.sidePanelMessages[0];
+        document.querySelector('.side-header').textContent = message.header;
+        document.querySelector('.side-content').textContent = message.content;
+        document.getElementById('side-panel').style.display = 'block';
     }
 }
 
@@ -110,18 +140,10 @@ function rotateSidePanel() {
     if (Config.sidePanelMessages && Config.sidePanelMessages.length > 0) {
         var header = document.querySelector('.side-header');
         var content = document.querySelector('.side-content');
-        var randomIndex = getRandomIndex(Config.sidePanelMessages);
+        var message = Config.sidePanelMessages[0];
         
-        header.style.opacity = '0';
-        content.style.opacity = '0';
-
-        setTimeout(function() {
-            var message = Config.sidePanelMessages[randomIndex];
-            header.textContent = message.header;
-            content.textContent = message.content;
-            header.style.opacity = '1';
-            content.style.opacity = '1';
-        }, 500);
+        header.textContent = message.header;
+        content.textContent = message.content;
     }
 }
 
@@ -242,14 +264,8 @@ document.addEventListener("DOMContentLoaded", function() {
   );
 
   if (Config.sidePanelMessages && Config.sidePanelMessages.length > 0) {
-    var sidePanelIndex = 0;
-    rotateSidePanel(sidePanelIndex);
-    
-    setInterval(function() {
-        sidePanelIndex++;
-        rotateSidePanel(sidePanelIndex);
-    }, Config.sidePanelRotationLength);
-}
+    rotateSidePanel(); // Just set it once, no interval needed
+  }
 
   if (hasRotatingContent) {
       var rotationIndex = 0;

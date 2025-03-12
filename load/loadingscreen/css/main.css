@@ -158,7 +158,11 @@ h1 {
   width: 98%;
   text-align: center;
   transition: opacity 0.5s ease-in-out;
-  font-size: 1.1em;
+  font-size: 1.4rem;
+  padding: 10px 0;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  z-index: 100;
 }
 
 #history {
@@ -218,12 +222,16 @@ h1 {
 #tips-panel h3 {
   margin: 0 0 5px 0;
   text-align: center;
+  color: #fff;
+  font-size: 1.2rem;
 }
 
 #tip-content {
   text-align: center;
-  transition: opacity 0.5s ease-in-out;
   margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  padding: 0 20px;
 }
 
 .side-header {
